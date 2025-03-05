@@ -16,3 +16,14 @@ def decrypt_aes_route():
     key = data['key']
     plaintext = decrypt_aes(ciphertext, key)
     return jsonify({'plaintext': plaintext})
+
+@challenges_bp.route('/submit/fermat_rsa', methods=['POST'])
+def submit_fermat_rsa():
+    data = request.json
+    challenge_id = data['challenge_id']
+    answer = data['answer']
+    challenge = Challenge.query.get(challenge_id)
+    if not challenge:
+        return jsonify({'message': 'Challenge not found'}), 404
+    if answer == challenge.answer:
+        return jsonify({'message': 'Correct!'})

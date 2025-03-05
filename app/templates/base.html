@@ -1,15 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Crypto Lab</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISCryptLab - Trang Chủ</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome để thêm icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1639322537228-f714d5e7f6e5');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Crypto Lab</h1>
-    </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <!-- Thanh điều hướng (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">HISCryptLab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dịch Vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Về Chúng Tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên Hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Phần Banner/Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Chào mừng đến với HISCryptLab</h1>
+            <p class="lead">Nơi cung cấp các giải pháp mã hóa và bảo mật hàng đầu cho doanh nghiệp của bạn.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Tìm Hiểu Thêm</a>
+        </div>
+    </section>
+
+    <!-- Phần Giới Thiệu Dịch Vụ (Features) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Mã Hóa Dữ Liệu</h5>
+                            <p class="card-text">Bảo vệ dữ liệu quan trọng của bạn với các thuật toán mã hóa tiên tiến.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Bảo Mật Hệ Thống</h5>
+                            <p class="card-text">Đảm bảo hệ thống của bạn an toàn trước các cuộc tấn công mạng.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Tư Vấn Bảo Mật</h5>
+                            <p class="card-text">Nhận tư vấn từ đội ngũ chuyên gia để xây dựng chiến lược bảo mật hiệu quả.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 HISCryptLab. All Rights Reserved.</p>
+            <p>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
